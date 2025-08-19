@@ -51,6 +51,55 @@ GYMWORKOUTS = {
             "Leg Adductors 2 x 30, 60%",
             "Recovery: Bent Leg Body Twist, Thigh Stretch"
         ]
+    },
+    "Thursday Session":{
+        "title": "Arms",
+        "exercises":
+        [
+            "Spiderman Pushups 4 x 6",
+            "Windmills 4 x 10, cadence",
+            "Warm up 15 min run 15 mins",
+            "Military Press 3x6, 3x5, 3x4, increase each time",
+            "I-Y-T Raises 3 x 10 each",
+            "Rope Curls 4 x 10",
+            "OH Face Pull 2 x 24",
+            "Overhead Tricep Extensions - Cable 4 x 10",
+            "Tricep Pushdowns 4 x 10",
+            "Shrugs 4x10, 4x8, 4x6, 4x4"
+        ]
+    },
+    "Friday Session": {
+        "title": "Legs (Glute/Hamstrings Focus) + Abdominals",
+        "exercises":
+        [
+            "Air Squats 3 x 10",
+            "Deadlifts (Smith Machine) - AFT weight",
+            "Hip Thrusts 3 x 10",
+            "Seated Leg Curls 3 x 12",
+            "Leg Abductors 2 x 30, 60%",
+            "Abdominal Crunches 3 x 10",
+            "Rowers 3 x 10"
+        ]
+    },
+    "Saturday Session": {
+        "title": "Chest and Back (Isolated Movements)",
+        "exercises": [
+            "Iso Bench Press (Machine or DB) 4 sets of 8",
+            "Single Arm Lat Pull-down 4 sets of 10",
+            "Iso Incline Bench 3 sets of 8",
+            "Iso Seated Row 3 sets of 10",
+            "Cable Fly 4 sets of 10",
+            "Lat Pullover 4 sets of 10",
+            "Dips X Pull-ups Super set 3 sets til failure"
+        ]
+    },
+    "Sunday Session": {
+        "title": "Rest Day",
+        "exercises": [
+            "30 Min Cardio (3.5-3.7 Speed w 12 Incline or 6.0 Speed w 0 Incline)",
+            "Abs Circuit (Planks, Ab Wheel, Hanging Leg Raises, Hanging Twist) 1 Min, 3 sets",
+            "Active and Dynamic Stretching, Foam Roll for Recovery"
+        ]
     }
 }
 def send_pushover_notification(title, message):
