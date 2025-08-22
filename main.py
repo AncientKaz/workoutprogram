@@ -2,15 +2,14 @@ import datetime
 import requests
 
 #--- Keys ---#
-PUSHOVER_KEY = "um3e9ioxybhsekhzdjrh1c9hb12et7" # User specific info
+PUSHOVER_KEY = "um3e9ioxybhsekhzdjrh1c9hb12et7" # User specific info, change it to your own
 PUSHOVER_TOKEN = "axgf7pwvytpq5rseo92bo1pgi36vvp" # For the app
 
 #--- Workout Plan by Day, Separated ---#
 GYMWORKOUTS = {
-    "Monday Session": {
+    "Monday": {
         "title": "Upper (Chest, Triceps, Shoulders)",
-        "exercises":
-        [
+        "exercises":[
             "Rowers x30",
             "Pushups x40",
             "30 Minute Cardio Session (60/120s)",
@@ -23,10 +22,9 @@ GYMWORKOUTS = {
             "Tricep Extensions (4 x 10)"
         ]
     },
-    "Tuesday Session": {
+    "Tuesday": {
         "title": "Back + Biceps",
-        "exercises": 
-        [
+        "exercises":[
             "Rowers x30",
             "Pushups x40",
             "30 Minute Cardio Sessions (Five Mins On, Five Mins Off)",
@@ -38,10 +36,9 @@ GYMWORKOUTS = {
             "Seated Rows (4 x 12), 40%"
         ]
     },
-    "Wednesday Session": {
+    "Wednesday": {
         "title": "Legs (Quad Focus)",
-        "exercises":
-        [
+        "exercises":[
             "High Knees 4 x 10",
             "Motivator 5 downward",
             "Squats (Smith Machine) 5 x 6, 80%",
@@ -52,10 +49,9 @@ GYMWORKOUTS = {
             "Recovery: Bent Leg Body Twist, Thigh Stretch"
         ]
     },
-    "Thursday Session":{
+    "Thursday":{
         "title": "Arms",
-        "exercises":
-        [
+        "exercises":[
             "Spiderman Pushups 4 x 6",
             "Windmills 4 x 10, cadence",
             "Warm up 15 min run 15 mins",
@@ -68,10 +64,9 @@ GYMWORKOUTS = {
             "Shrugs 4x10, 4x8, 4x6, 4x4"
         ]
     },
-    "Friday Session": {
+    "Friday": {
         "title": "Legs (Glute/Hamstrings Focus) + Abdominals",
-        "exercises":
-        [
+        "exercises":[
             "Air Squats 3 x 10",
             "Deadlifts (Smith Machine) - AFT weight",
             "Hip Thrusts 3 x 10",
@@ -81,7 +76,7 @@ GYMWORKOUTS = {
             "Rowers 3 x 10"
         ]
     },
-    "Saturday Session": {
+    "Saturday": {
         "title": "Chest and Back (Isolated Movements)",
         "exercises": [
             "Iso Bench Press (Machine or DB) 4 sets of 8",
@@ -93,7 +88,7 @@ GYMWORKOUTS = {
             "Dips X Pull-ups Super set 3 sets til failure"
         ]
     },
-    "Sunday Session": {
+    "Sunday": {
         "title": "Rest Day",
         "exercises": [
             "30 Min Cardio (3.5-3.7 Speed w 12 Incline or 6.0 Speed w 0 Incline)",
@@ -123,13 +118,13 @@ def main():
     # Get date as string and get current day workout
     day_workout=datetime.datetime.now().strftime("%A")
     workout_info = GYMWORKOUTS.get(day_workout)
-    notif_title = f"Let's get this workout in broski. Time to grind."
+    notification_title = f"Let's get this workout in broski. Time to grind."
     if workout_info:
-        workout_info = workout_info["title"]
+        workout_title = workout_info["title"]
         exercises = workout_info["exercises"]
         
         # Build the message string with a title and a bulleted list of exercises
-        message_lines = [workout_info]
+        message_lines = [workout_title]
         for exercise in exercises:
             message_lines.append(f"• {exercise}")
         
